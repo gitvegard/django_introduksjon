@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
 from myapp.views import book_post
+from myapp.views import home
 
-def home(request):
-    return HttpResponse("Welcome to the Home Page!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books', book_post),
-    path('', home, name='home')
+    path('', home)
 ]
